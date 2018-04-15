@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="iOS应用内购流程记录（非消耗商品） 银行信息税务填写略 角色介绍 iOS应用内购买主要依赖于Apple 提供的StoreKit框架。 整体流程来看其中包含4个角色，MyServer、App、StoreKit、AppStore  MyServer:    我们自己的后端业务服务器，负责与前端App和Apple进行验证通信，以及订单的生成 App:        为用户提供内购商品的展示和提供内购的">
+<meta name="description" content="title:OS应用内购流程记录（非消耗商品） 银行信息税务填写略 角色介绍 iOS应用内购买主要依赖于Apple 提供的StoreKit框架。 整体流程来看其中包含4个角色，MyServer、App、StoreKit、AppStore  MyServer:    我们自己的后端业务服务器，负责与前端App和Apple进行验证通信，以及订单的生成 App:        为用户提供内购商品的展示和">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ManShan&#39;blogs">
 <meta property="og:url" content="http://overflowhill.com/2018/04/13/iOS应用内购买流程记录(非消耗商品)/index.html">
 <meta property="og:site_name" content="ManShan&#39;blogs">
-<meta property="og:description" content="iOS应用内购流程记录（非消耗商品） 银行信息税务填写略 角色介绍 iOS应用内购买主要依赖于Apple 提供的StoreKit框架。 整体流程来看其中包含4个角色，MyServer、App、StoreKit、AppStore  MyServer:    我们自己的后端业务服务器，负责与前端App和Apple进行验证通信，以及订单的生成 App:        为用户提供内购商品的展示和提供内购的">
+<meta property="og:description" content="title:OS应用内购流程记录（非消耗商品） 银行信息税务填写略 角色介绍 iOS应用内购买主要依赖于Apple 提供的StoreKit框架。 整体流程来看其中包含4个角色，MyServer、App、StoreKit、AppStore  MyServer:    我们自己的后端业务服务器，负责与前端App和Apple进行验证通信，以及订单的生成 App:        为用户提供内购商品的展示和">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-13T10:00:49.000Z">
+<meta property="og:updated_time" content="2018-04-15T13:34:23.810Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ManShan&#39;blogs">
-<meta name="twitter:description" content="iOS应用内购流程记录（非消耗商品） 银行信息税务填写略 角色介绍 iOS应用内购买主要依赖于Apple 提供的StoreKit框架。 整体流程来看其中包含4个角色，MyServer、App、StoreKit、AppStore  MyServer:    我们自己的后端业务服务器，负责与前端App和Apple进行验证通信，以及订单的生成 App:        为用户提供内购商品的展示和提供内购的">
+<meta name="twitter:description" content="title:OS应用内购流程记录（非消耗商品） 银行信息税务填写略 角色介绍 iOS应用内购买主要依赖于Apple 提供的StoreKit框架。 整体流程来看其中包含4个角色，MyServer、App、StoreKit、AppStore  MyServer:    我们自己的后端业务服务器，负责与前端App和Apple进行验证通信，以及订单的生成 App:        为用户提供内购商品的展示和">
 
 
 
@@ -299,7 +299,7 @@
       
 
       
-        <p>iOS应用内购流程记录（非消耗商品）</p>
+        <p>title:OS应用内购流程记录（非消耗商品）</p>
 <p>银行信息税务填写略</p>
 <p>角色介绍</p>
 <pre><code>iOS应用内购买主要依赖于Apple 提供的StoreKit框架。
@@ -343,7 +343,7 @@ transaction.transactionReceipt这个属性被标注为iOS7之后就已经被放�
 [NSBundle appStoreReceiptURL]，然而如果你的服务器要求不需编码发送至服务器而由服务器来进行编码，那么请使用iOS7之前的方法，如果可以接受base64编码的receipt，则可以直接使用后者。在服务器与Apple服务器交互过程中，可能由于网络问题导致请求失败，未能获取验证的返回结果从而实现购买业务。
 
 6）后端验证成功后，即可对购买业务进行相应的逻辑操作。
-</code></pre><p>###掉单问题</p>
+</code></pre><p>掉单问题</p>
 <pre><code>上述过程的第4）或第6）步会产生用户已扣款但未能收到相应商品的情况，对此我们目前的解决办法如下：
 
 4）将内购功能作为一个单例对象，在应用程序初始化的时候就添加观察者，如果有未完成的交易，Apple的服务器会重新完成交易，体现在观察者回调的函数中。
@@ -359,7 +359,7 @@ AppleID未付款，后端未记录：确认为未购买状态
 AppleID未付款，后端有记录：以我们的用户体系购买记录为基准，判定为已购买
 
 则解决之前问题就简单了，Apple已经扣费，如果在验证部分掉线，应显示为恢复购买。
-</code></pre><p>###Apple审核相关</p>
+</code></pre><p>Apple审核相关</p>
 <pre><code>说说我遇到的问题：
 
 商品审核，网上搜一下，注意一下把描述写成指定样式就可以了。
